@@ -14,16 +14,14 @@
 		"useUnknownInCatchVariables": true,
 		"noUncheckedIndexedAccess": true,
 		"skipLibCheck": true,
-
 		// Modules
 		"module": "CommonJS",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
-
 		// Emit
 		"declaration": true,
 		"importHelpers": true,
-		"importsNotUsedAsValues": "error",
+		// "importsNotUsedAsValues": "error",
 		"inlineSources": true,
 		"newLine": "lf",
 		"noEmitHelpers": true,
@@ -33,14 +31,17 @@
 		"sourceMap": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-
 		// Language and Environment
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"lib": ["ESNext"],
+		"lib": [
+			"ESNext"
+		],
 		"target": "ES2021",
 		"useDefineForClassFields": true
 	},
-	"include": ["src/*.ts"],
+	"include": [
+		"src/*.ts"
+	],
 	"exclude": []
 }

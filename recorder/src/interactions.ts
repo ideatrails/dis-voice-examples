@@ -1,4 +1,4 @@
-import { entersState, joinVoiceChannel, VoiceConnection, VoiceConnectionStatus } from '@discordjs/voice';
+import { DiscordGatewayAdapterCreator, entersState, joinVoiceChannel, VoiceConnection, VoiceConnectionStatus } from '@discordjs/voice';
 import { Client, CommandInteraction, GuildMember, Snowflake } from 'discord.js';
 import { createListeningStream } from './createListeningStream';
 
@@ -17,8 +17,8 @@ async function join(
 				guildId: channel.guild.id,
 				selfDeaf: false,
 				selfMute: true,
-				// @ts-expect-error Currently voice is built in mind with API v10 whereas discord.js v13 uses API v9.
-				adapterCreator: channel.guild.voiceAdapterCreator,
+				// @-- ts-expect-error Currently voice is built in mind with API v10 whereas discord.js v13 uses API v9.
+				adapterCreator: (channel.guild.voiceAdapterCreator as unknown) as DiscordGatewayAdapterCreator,
 			});
 		} else {
 			await interaction.followUp('Join a voice channel and then try that again!');
