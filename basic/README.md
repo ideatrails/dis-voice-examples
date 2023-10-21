@@ -89,3 +89,24 @@ client.on('message', async (message) => {
 	}
 });
 ```
+
+# Fix
+
+1. In the basic directory install these
+
+```
+npm install discord-api-types
+npm install discord.js
+```
+
+2. comment-out the tsconfig.json line
+
+```
+// "importsNotUsedAsValues": "error",
+```
+
+3. in package.json change bot to main
+
+```
+"start": "npm run build && node dist/main.js",
+```
